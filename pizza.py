@@ -74,7 +74,7 @@ print(pizza_df_selected_columns)  # This will display the selected columns of th
 
 #to change the column names to uppercase, we can use the str.upper() method. For example:
 pizza_df.columns = pizza_df.columns.str.upper()
-print(pizza_df.head())  # This will display the first 5 rows of the Data
+print(pizza_df.head())  # This will display the first 5 rows of the DataFrame
 
 #to select specific columns from the DataFrame, we can use the double square brackets. For example, to select the "RESTAURANT NAME" and "LOCATION" columns, we can do:
 selected_columns_df = pizza_df[["RESTAURANT NAME", "LOCATION"]]
@@ -83,3 +83,23 @@ print(selected_columns_df)  # This will display the selected columns of the Data
 #to filter the DataFrame based on rows and columns numbers, we can use the iloc[] accessor. For example, to select the first 5 rows and the first 2 columns, we can do:
 filtered_df = pizza_df.iloc[:3, :1]  # This will select the first 3 rows and the first column of the DataFrame
 print(filtered_df)  # This will display the filtered DataFrame
+
+"""#to add a new column to the DataFrame, we can simply assign a new Series or list to a new column name. For example, to add a new column called "RATING" with some sample ratings, we can do:
+pizza_df["RATING"] = [4.5, 4.0, 3.5]  # Sample ratings for each restaurant
+print(pizza_df.head())"""  # This will display the first 5 rows of the Data
+
+"""#to drop a column from the DataFrame, we can use the drop() method. For example, to drop the "RATING" column, we can do:
+pizza_df = pizza_df.drop(columns=["Is Delayed"])  # This will drop the "RATING" column from the DataFrame
+print(pizza_df.head())  # This will display the first 5 rows of the DataFrame"""
+
+#to concatenate two columns into a new column, we can use the + operator. For example, to concatenate the "RESTAURANT NAME" and "LOCATION" columns into a new column called "RESTAURANT LOCATION", we can do:
+pizza_df["RESTAURANT LOCATION"] = pizza_df["RESTAURANT NAME"] + " - " + pizza_df["LOCATION"]
+print(pizza_df.head())  # This will display the first 5 rows of the Data
+
+#to show the length of the DataFrame, we can use the len() function. For example:
+print(len(pizza_df))  # This will display the number of rows in the DataFrame   
+
+#to rename the columns of the DataFrame, we can use the rename() method. For example, to rename the "RESTAURANT NAME" column to "NAME" and the "LOCATION" column to "CITY", we can do:
+pizza_df = pizza_df.rename(columns={ "LOCATION": "CITY"}, inplace=True)
+print(pizza_df.head())  # This will display the first 5 rows of the Data
+

@@ -50,3 +50,14 @@ print(student_data)
 #to name indexes of the DataFrame
 student_data.index.name = "Country Code"
 print(student_data)
+
+#to read a CSV file into a DataFrame, we can use the pd.read_csv() function. For example, if we have a CSV file named "students.csv" with the following content:
+pizza_df = pd.read_csv(r"D:\\Python Codes and Project\\Pandas Projects\\Pandas\\Enhanced_pizza_sell_data_2024-25.csv", encoding='cp1252')  # Replace with the actual path to your CSV file 
+print(pizza_df.head())  # This will display the first 5 rows of the DataFrame
+
+#to print our current working directory, we can use the os module. For example:
+import os   
+print(os.getcwd())  # This will display the current working directory
+
+#to show dataFrame as  a shape means to show the dimensions or number of rows and columns, we can use the shape attribute. For example:
+print(pizza_df.shape)  # Output: (number of rows, number of columns)

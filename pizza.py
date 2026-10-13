@@ -38,3 +38,15 @@ print(df["Price"])  # Output: Series with pizza names
 
 #to show columns of the DataFrame, we can use the columns attribute. For example:
 print(df.columns)  # Output: Index(['Pizza Name', 'Price', 'Size',
+
+#to name indexes of the DataFrame with the first two letters of the country names, we can use the index parameter of the DataFrame constructor. For example:
+student_data = pd.DataFrame({"Name": ["Alice", "Bob", "Charlie", "David", "Eva"],
+                             "Age": [20, 21, 22, 23, 24],
+                             "Country": ["USA", "Canada", "UK", "Australia", "Germany"],
+                                "GPA": [3.5, 3.7, 3.8, 3.9, 4.0]},
+                            index=["US", "CA", "UK", "AU", "DE"])
+print(student_data)
+
+#to name indexes of the DataFrame
+student_data.index.name = "Country Code"
+print(student_data)

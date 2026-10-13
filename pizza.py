@@ -35,3 +35,6 @@ print(df.loc[:, "Pizza Name"])  # Output: Series with pizza names
 
 #or we can use the column name directly to access the column. For example:
 print(df["Price"])  # Output: Series with pizza names
+
+#to show columns of the DataFrame, we can use the columns attribute. For example:
+print(df.columns)  # Output: Index(['Pizza Name', 'Price', 'Size',

@@ -61,3 +61,25 @@ print(os.getcwd())  # This will display the current working directory
 
 #to show dataFrame as  a shape means to show the dimensions or number of rows and columns, we can use the shape attribute. For example:
 print(pizza_df.shape)  # Output: (number of rows, number of columns)
+
+#to show the last 5 rows of the DataFrame, we can use the tail() method. For example:
+print(pizza_df.tail())  # This will display the last 5 rows of the DataFrame    
+
+#to show information about the DataFrame, we can use the info() method. For example:
+print(pizza_df.info())  # This will display information about the DataFrame, including the
+
+#to print the data of required columns using usecols parameter of the read_csv() function, we can do:
+pizza_df_selected_columns = pd.read_csv(r"D:\\Python Codes and Project\\Pandas Projects\\Pandas\\Enhanced_pizza_sell_data_2024-25.csv", usecols=["Restaurant Name", "Location", "Distance (km)"], encoding='cp1252')  # Replace with the actual path to your CSV file
+print(pizza_df_selected_columns)  # This will display the selected columns of the DataFrame
+
+#to change the column names to uppercase, we can use the str.upper() method. For example:
+pizza_df.columns = pizza_df.columns.str.upper()
+print(pizza_df.head())  # This will display the first 5 rows of the Data
+
+#to select specific columns from the DataFrame, we can use the double square brackets. For example, to select the "RESTAURANT NAME" and "LOCATION" columns, we can do:
+selected_columns_df = pizza_df[["RESTAURANT NAME", "LOCATION"]]
+print(selected_columns_df)  # This will display the selected columns of the DataFrame
+
+#to filter the DataFrame based on rows and columns numbers, we can use the iloc[] accessor. For example, to select the first 5 rows and the first 2 columns, we can do:
+filtered_df = pizza_df.iloc[:3, :1]  # This will select the first 3 rows and the first column of the DataFrame
+print(filtered_df)  # This will display the filtered DataFrame

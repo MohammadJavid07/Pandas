@@ -100,6 +100,9 @@ print(pizza_df.head())  # This will display the first 5 rows of the Data
 print(len(pizza_df))  # This will display the number of rows in the DataFrame   
 
 #to rename the columns of the DataFrame, we can use the rename() method. For example, to rename the "RESTAURANT NAME" column to "NAME" and the "LOCATION" column to "CITY", we can do:
-pizza_df = pizza_df.rename(columns={ "LOCATION": "CITY"}, inplace=True)
+pizza_df = pizza_df.rename(columns={ "LOCATION": "CITY"})
 print(pizza_df.head())  # This will display the first 5 rows of the Data
 
+#filtering the pizza_df for duplicate CITY
+duplicate_pizza_city = pizza_df[pizza_df.duplicated(subset=["CITY"])]
+print(duplicate_pizza_city["CITY"].value_counts())
